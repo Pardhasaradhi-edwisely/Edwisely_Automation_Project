@@ -59,3 +59,21 @@ class Test_001_login:
             print('lOGIN UNSUCCESSFUL')
             self.logger.error("******Login Unsuccessful")
         self.driver.close()
+
+    @pytest.mark.regression
+    def test_validateTitlePage(self,setup):
+        self.logger.info("******Test_001_login******")
+        self.logger.info("********validate title of the page testcases******")
+        self.driver = setup
+        #data driven
+        self.url = XLUtils.readData(self.path, 'Sheet1', 2, 1)
+        self.driver.get(self.url)
+        self.page_title = self.driver.title
+        if self.page_title == "RMK Nextgen | Login":
+            print("TITLE MATCHED")
+            self.logger.info("********Page Title matched")
+        else:
+            self.driver.save_screenshot(".//Screenshots//"+"test_validateTitlePage.png")
+            print("TITLE NOT MATCHED")
+            self.logger.error("*******page title not matched******")
+        self.driver.close()
