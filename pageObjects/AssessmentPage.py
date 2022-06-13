@@ -55,6 +55,8 @@ class assessment:
     link_add_source_id="sourceBtn"
     textbox_source_id="sourceInput"
     button_save_section_id= "saveSection"
+    button_add_question_id="addques"
+
 
     def __init__(self,driver):
         self.driver=driver
@@ -116,6 +118,9 @@ class assessment:
     def clickContinue(self):
         self.driver.find_element(BY.ID,self.button_continue_id).click()
 
+    def clickAddQuestion(self):
+        self.driver.find_element(BY.ID,self.button_add_question_id).click()
+
     def addquestion(self,ques):
         self.driver.find_element(BY.XPATH,self.textbox_add_question_xpath).clear()
         self.driver.find_element(BY.XPATH, self.textbox_add_question_xpath).send_keys(ques)
@@ -154,6 +159,9 @@ class assessment:
 
     def clickSaveAndSend(self):
         self.driver.find_element(BY.ID,self.button_save_and_send_id).click()
+
+    def clickChooseQuestion(self):
+        self.driver.find_element(BY.ID,self.element_choose_question_id).click()
 
 
 
