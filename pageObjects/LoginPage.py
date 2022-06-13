@@ -40,6 +40,8 @@ class login:
     def submit_02(self):
         self.driver.find_element(By.ID,self.button_submit_2_id).click()
 
+class courses:
+
 
 
 
