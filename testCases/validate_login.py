@@ -26,7 +26,8 @@ class Test_001_login:
         self.url = XLUtils.readData(self.path, 'Sheet1', 2, 1)
         self.driver.get(self.url)
         self.page_title = self.driver.title
-        if self.page_title == "RMK Nextgen | Login":
+        self.expected_title=XLUtils.readData(self.path,'Sheet1',2,4)
+        if self.page_title == self.expected_title:
             print("TITLE MATCHED")
             self.logger.info("********Page Title matched")
         else:
@@ -48,7 +49,7 @@ class Test_001_login:
         self.password=XLUtils.readData(self.path,'Sheet1',2,3)
         self.li.facultyPassword(self.password)
         self.li.submit_02()
-        time.sleep(2)
+        time.sleep(3)
         self.page_title = self.driver.title
         print(self.page_title)
         if self.page_title == "RMK Nextgen | Dashboard":

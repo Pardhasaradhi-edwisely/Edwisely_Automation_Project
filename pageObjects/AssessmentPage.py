@@ -3,10 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 class assessment:
-    element_assessment_classname="row no-gutters"
+    element_assessment_classname="//a[normalize-space()='Assessments']"
     label_your_assessment_id="courseName"
-    button_create_assessment_xpath="//a[normalize-space()='Create New Assessment']"
-    link_objective_xpath="//a[normalize-space()='Objective']"
+    button_create_assessment_xpath="//i[@class='fas fa-laptop-code']"
+    link_objective_xpath="//a[@class='dropdown-item'][1]"
     link_subjective_xpath="//a[normalize-space()='Subjective']"
     textbox_add_title_id="title-objective"
     textbox_description_box_xpath="(//div[@role='textbox'])[1]"
@@ -62,23 +62,23 @@ class assessment:
         self.driver=driver
 
     def clickAssessment(self):
-        self.driver.find_element(By.CLASS_NAME,self.element_assessment_classname).click()
+        self.driver.find_element(By.XPATH,self.element_assessment_classname).click()
 
     def clickCreateNewAssessment(self):
-        self.driver.find_element(BY.XPATH,self.button_create_assessment_xpath).click()
+        self.driver.find_element(By.XPATH,self.button_create_assessment_xpath).click()
 
     def clickObjectiveAssessment(self):
-        self.driver.find_element(BY.LINK_TEXT,self.link_objective_xpath).click()
+        self.driver.find_element(By.XPATH,self.link_objective_xpath).click()
 
     def clickSubjectiveAssessment(self):
-        self.driver.find_element(BY.LINK_TEXT,self.link_subjective_xpath).click()
+        self.driver.find_element(By.LINK_TEXT,self.link_subjective_xpath).click()
 
     def addTitle(self,title):
-        self.driver.find_element(BY.ID,self.textbox_add_title_id).clear()
-        self.driver.find_element(BY.ID,self.textbox_add_title_id).send_keys(title)
+        self.driver.find_element(By.ID,self.textbox_add_title_id).clear()
+        self.driver.find_element(By.ID,self.textbox_add_title_id).send_keys(title)
 
     def addDescription(self,descrip):
-        self.driver.find_element(BY.XPATH,self.textbox_description_box_xpath).clear()
+        self.driver.find_element(By.XPATH,self.textbox_description_box_xpath).clear()
         self.driver.find_element(By.XPATH,self.textbox_description_box_xpath).send_keys(descrip)
 
     def selectSubject(self,sub):
@@ -90,12 +90,12 @@ class assessment:
         self.driver.find_element(By.ID, self.textbox_section_name_id).send_keys(sec)
 
     def marksPerQuestion(self,marks):
-        mar=Select(self.driver.find_element(BY.XPATH,self.dropdown_marks_per_question_xpath))
+        mar=Select(self.driver.find_element(By.XPATH,self.dropdown_marks_per_question_xpath))
         mar.select_by_value('2.0')
 
     def secInstruction(self,instruction):
-        self.driver.find_element(BY.XPATH,self.textbox_instruction_xpath).clear()
-        self.driver.find_element(BY.XPATH,self.textbox_instruction_xpath).send_keys(instruction)
+        self.driver.find_element(By.XPATH,self.textbox_instruction_xpath).clear()
+        self.driver.find_element(By.XPATH,self.textbox_instruction_xpath).send_keys(instruction)
 
     def addNewSection(self):
         self.driver.find_element(BY.ID,self.button_add_new_section_id).click()
@@ -105,63 +105,63 @@ class assessment:
         self.driver.find_element(By.ID, self.textbox_section_name_id2).send_keys(sec)
 
     def marksPerQuestion_02(self,marks):
-        mar=Select(self.driver.find_element(BY.XPATH,self.dropdown_marks_per_question_xpath2))
+        mar=Select(self.driver.find_element(By.XPATH,self.dropdown_marks_per_question_xpath2))
         mar.select_by_value('2.0')
 
     def secInstruction_02(self,instruction):
-        self.driver.find_element(BY.XPATH,self.textbox_instruction_xpath2).clear()
-        self.driver.find_element(BY.XPATH,self.textbox_instruction_xpath2).send_keys(instruction)
+        self.driver.find_element(By.XPATH,self.textbox_instruction_xpath2).clear()
+        self.driver.find_element(By.XPATH,self.textbox_instruction_xpath2).send_keys(instruction)
 
     def deleteSection(self):
-        self.driver.find_element(BY.ID,self.button_delete_above_section_id).click()
+        self.driver.find_element(By.ID,self.button_delete_above_section_id).click()
 
     def clickContinue(self):
-        self.driver.find_element(BY.ID,self.button_continue_id).click()
+        self.driver.find_element(By.ID,self.button_continue_id).click()
 
     def clickAddQuestion(self):
-        self.driver.find_element(BY.ID,self.button_add_question_id).click()
+        self.driver.find_element(By.ID,self.button_add_question_id).click()
 
     def addquestion(self,ques):
-        self.driver.find_element(BY.XPATH,self.textbox_add_question_xpath).clear()
-        self.driver.find_element(BY.XPATH, self.textbox_add_question_xpath).send_keys(ques)
+        self.driver.find_element(By.XPATH,self.textbox_add_question_xpath).clear()
+        self.driver.find_element(By.XPATH, self.textbox_add_question_xpath).send_keys(ques)
 
     def selectTopics(self):
-        self.driver.find_element(BY.ID,self.element_topic_id).click()
+        self.driver.find_element(By.ID,self.element_topic_id).click()
 
     def inputOption(self,opta,optb,optc,optd):
-        self.driver.find_element(BY.XPATH,self.textbox_optionA_xpath).clear()
-        self.driver.find_element(BY.XPATH, self.textbox_optionA_xpath).send_keys(opta)
-        self.driver.find_element(BY.XPATH, self.textbox_optionB_xpath).clear()
-        self.driver.find_element(BY.XPATH, self.textbox_optionB_xpath).send_keys(optb)
-        self.driver.find_element(BY.XPATH, self.textbox_optionC_xpath).clear()
-        self.driver.find_element(BY.XPATH, self.textbox_optionC_xpath).send_keys(optc)
-        self.driver.find_element(BY.XPATH, self.textbox_optionD_xpath).clear()
-        self.driver.find_element(BY.XPATH, self.textbox_optionD_xpath).send_keys(optd)
+        self.driver.find_element(By.XPATH,self.textbox_optionA_xpath).clear()
+        self.driver.find_element(By.XPATH, self.textbox_optionA_xpath).send_keys(opta)
+        self.driver.find_element(By.XPATH, self.textbox_optionB_xpath).clear()
+        self.driver.find_element(By.XPATH, self.textbox_optionB_xpath).send_keys(optb)
+        self.driver.find_element(By.XPATH, self.textbox_optionC_xpath).clear()
+        self.driver.find_element(By.XPATH, self.textbox_optionC_xpath).send_keys(optc)
+        self.driver.find_element(By.XPATH, self.textbox_optionD_xpath).clear()
+        self.driver.find_element(By.XPATH, self.textbox_optionD_xpath).send_keys(optd)
 
     def selectOption(self):
-        self.driver.find_element(BY.XPATH,self.checkbox_option_xpath).click()
+        self.driver.find_element(By.XPATH,self.checkbox_option_xpath).click()
 
     def selectBloom(self,bloom):
-        blm=Select(self.driver.find_element(BY.ID,self.dropdown_blooms_id))
+        blm=Select(self.driver.find_element(By.ID,self.dropdown_blooms_id))
         blm.select_by_visible_text(bloom)
 
     def selectDifficulty(self,difficulty):
-        dif=Select(self.driver.find_element(BY.ID,self.dropdown_difficult_id))
+        dif=Select(self.driver.find_element(By.ID,self.dropdown_difficult_id))
         dif.select_by_visible_text(difficulty)
 
     def addSource(self,source):
-        self.driver.find_element(BY.LINK_TEXT,self.link_add_source_id).click()
-        self.driver.find_element(BY.ID,self.textbox_source_id).clear()
-        self.driver.find_element(BY.ID,self.textbox_source_id).send_keys(source)
+        self.driver.find_element(By.LINK_TEXT,self.link_add_source_id).click()
+        self.driver.find_element(By.ID,self.textbox_source_id).clear()
+        self.driver.find_element(By.ID,self.textbox_source_id).send_keys(source)
 
     def clickSaveToSection(self):
-        self.driver.find_element(BY.XPATH,self.button_save_to_section_xpath).click()
+        self.driver.find_element(By.XPATH,self.button_save_to_section_xpath).click()
 
     def clickSaveAndSend(self):
-        self.driver.find_element(BY.ID,self.button_save_and_send_id).click()
+        self.driver.find_element(By.ID,self.button_save_and_send_id).click()
 
     def clickChooseQuestion(self):
-        self.driver.find_element(BY.ID,self.element_choose_question_id).click()
+        self.driver.find_element(By.ID,self.element_choose_question_id).click()
 
 
 
