@@ -11,6 +11,16 @@ def getColumnCount(file,sheetName):
     sheet = workbook[sheetName]
     return(sheet.max_column)
 
+def dataValidation(file,sheetName,checkCell):
+    row = getRowCount(file,sheetName)
+    col = getColumnCount(file,sheetName)
+    for r in range(1, row + 1):
+        for c in range(1,col + 1):
+            exp = readData(file,sheetName, r, c)
+            if checkCell == exp:
+                status = "True"
+                return status
+
 def readData(file,sheetName,rownum,columnno):
     workbook = openpyxl.load_workbook(file)
     sheet = workbook[sheetName]
