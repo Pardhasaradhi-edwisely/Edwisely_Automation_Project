@@ -365,3 +365,10 @@
 2022-06-15 16:18:07 - INFO - RMK Nextgen | Login Page Verified 
 2022-06-15 16:18:10 - INFO - RMK Nextgen | Dashboard Page Verified 
 2022-06-15 16:18:11 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:25:43 - INFO - **** Test_002_Assessment ****
+2022-06-15 16:25:43 - INFO - **** TC_02 Validate Create Objective Assessment ****
+2022-06-15 16:25:50 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:29:14 - INFO - **** Test_002_Assessment ****
+2022-06-15 16:29:14 - INFO - **** TC_02 Validate Create Objective Assessment ****
+2022-06-15 16:29:38 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:29:42 - INFO - RMK Nextgen - Add Assessment Page Verified 
