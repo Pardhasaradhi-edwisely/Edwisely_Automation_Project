@@ -95,7 +95,8 @@ class Test_002_assessment:
                 print(self.status)
                 self.log=LogGen.statusValidation(self,self.status,self.gettitle,self.driver)
                 self.logger.info(self.log)
-                
+
+
 
 
 

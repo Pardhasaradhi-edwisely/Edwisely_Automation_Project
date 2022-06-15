@@ -36,7 +36,7 @@ class Test_001_login:
             self.logger.error("*******page title not matched******")
         self.driver.close()
 
-    @pytest.mark.sanity
+    @pytest.mark.regression
     def test_facultyLogin(self,setup):
         self.logger.info("*****faculty login test case*******")
         self.driver = setup
