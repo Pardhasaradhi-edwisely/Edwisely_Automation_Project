@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 15-Jun-2022 at 16:32:01 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 15-Jun-2022 at 18:18:33 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -262,8 +262,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.4</td></tr></table>
     <h2>Summary</h2>
-    <p>2 tests ran in 17.65 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 12.70 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -274,27 +274,19 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="passed results-table-row">
+      <tbody class="failed results-table-row">
         <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">validate_login.py::Test_001_login::test_validateTitlePage</td>
-          <td class="col-duration">2.63</td>
+          <td class="col-result">Failed</td>
+          <td class="col-name">validate_assessments.py::Test_002_assessment::test_CreateObjectiveAssessment</td>
+          <td class="col-duration">12.38</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>TITLE MATCHED
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:validate_login.py:22 ******Test_001_login******
-INFO     root:validate_login.py:23 ********validate title of the page testcases******
-INFO     root:validate_login.py:32 ********Page Title matched<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">validate_login.py::Test_001_login::test_facultyLogin</td>
-          <td class="col-duration">14.79</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>RMK Nextgen | Dashboard
-LOGIN SUCCESSFUL 
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:validate_login.py:41 *****faculty login test case*******
-INFO     root:validate_login.py:57 *****Login Successful****<br/></div></td></tr></tbody></table></body></html>
+            <div class="log">self = &lt;testCases.validate_assessments.Test_002_assessment object at 0x00000232F5E95840&gt;<br/>setup = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;49c4377de5871c9a4d3215796edc19cc&quot;)&gt;<br/><br/>    @pytest.mark.sanity<br/>    def test_CreateObjectiveAssessment(self,setup):<br/>        self.logger.info(&quot;**** Test_002_Assessment ****&quot;)<br/>        self.logger.info(&quot;**** TC_02 Validate Create Objective Assessment ****&quot;)<br/>        self.driver = setup<br/>        self.url=XLUtils.readData(self.path,&#x27;Sheet1&#x27;, 2 ,1)<br/>        self.driver.get(self.url)<br/>        self.driver.maximize_window()<br/>        self.driver.implicitly_wait(10)<br/>        self.page_title=self.driver.title<br/>        self.status = XLUtils.dataValidation(self.path, &#x27;Sheet1&#x27;, self.page_title)<br/>        if self.status == &quot;True&quot;:<br/>            self.li = login(self.driver)<br/>            self.username = XLUtils.readData(self.path, &#x27;Sheet1&#x27;, 2, 2)<br/>            self.li.facultyUsername(self.username)<br/>            self.password = XLUtils.readData(self.path, &#x27;Sheet1&#x27;, 2, 3)<br/>            self.li.facultyPassword(self.password)<br/>            self.li.submit_02()<br/>            time.sleep(3)<br/>            self.dashboard_title = self.driver.title<br/>            self.status = XLUtils.dataValidation(self.path, &#x27;Sheet1&#x27;, self.dashboard_title)<br/>            if self.status == &quot;True&quot;:<br/>                self.ap = assessment(self.driver)<br/>                self.ap.clickAssessment()<br/>                self.driver.implicitly_wait(10)<br/>                self.assesTitle = self.driver.title<br/>                print(self.assesTitle)<br/>                self.status = XLUtils.dataValidation(self.path, &#x27;Sheet1&#x27;, self.assesTitle)<br/>                print(self.status)<br/>                self.log = LogGen.statusValidation(self, self.status, self.assesTitle, self.driver)<br/>                self.logger.info(self.log)<br/>                time.sleep(2)<br/>                self.ap.clickCreateNewAssessment()<br/>                self.ap.clickObjectiveAssessment()<br/>                time.sleep(2)<br/>                self.gettitle = self.driver.title<br/>                print(self.gettitle)<br/>                self.status=XLUtils.dataValidation(self.path,&#x27;Sheet1&#x27;,self.gettitle)<br/>                print(self.status)<br/>                self.log=LogGen.statusValidation(self,self.status,self.gettitle,self.driver)<br/>                self.logger.info(self.log)<br/>                self.quesTitle=&quot;AutoObj &quot;+ReadConfig.random_generator()<br/>                self.ap.addTitle(self.quesTitle)<br/>                self.ap.addDescription(&quot;Automation_test&quot;)<br/>&gt;               self.ap.d<br/><span class="error">E               AttributeError: &#x27;assessment&#x27; object has no attribute &#x27;d&#x27;</span><br/><br/>testCases\validate_assessments.py:101: AttributeError<br/> ------------------------------Captured stdout call------------------------------ <br/>RMK Nextgen | Assessment
+True
+RMK Nextgen - Add Assessment
+True
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     root:validate_assessments.py:59 **** Test_002_Assessment ****
+INFO     root:validate_assessments.py:60 **** TC_02 Validate Create Objective Assessment ****
+INFO     root:validate_assessments.py:87 RMK Nextgen | Assessment Page Verified 
+INFO     root:validate_assessments.py:97 RMK Nextgen - Add Assessment Page Verified<br/></div></td></tr></tbody></table></body></html>

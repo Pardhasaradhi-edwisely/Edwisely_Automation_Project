@@ -382,3 +382,22 @@
 2022-06-15 18:03:18 - INFO - ********Page Title matched
 2022-06-15 18:03:18 - INFO - *****faculty login test case*******
 2022-06-15 18:03:23 - INFO - *****Login Successful****
+2022-06-15 18:05:47 - INFO - ******Test_001_login******
+2022-06-15 18:05:47 - INFO - ********validate title of the page testcases******
+2022-06-15 18:05:49 - INFO - ********Page Title matched
+2022-06-15 18:05:49 - INFO - *****faculty login test case*******
+2022-06-15 18:05:54 - INFO - *****Login Successful****
+2022-06-15 18:09:27 - INFO - ******Test_001_login******
+2022-06-15 18:09:27 - INFO - ********validate title of the page testcases******
+2022-06-15 18:09:28 - INFO - ********Page Title matched
+2022-06-15 18:09:33 - INFO - *****faculty login test case*******
+2022-06-15 18:09:38 - INFO - *****Login Successful****
+2022-06-15 18:17:50 - INFO - ******Test_001_login******
+2022-06-15 18:17:50 - INFO - ********validate title of the page testcases******
+2022-06-15 18:17:51 - INFO - ********Page Title matched
+2022-06-15 18:17:56 - INFO - *****faculty login test case*******
+2022-06-15 18:18:01 - INFO - *****Login Successful****
+2022-06-15 18:18:21 - INFO - **** Test_002_Assessment ****
+2022-06-15 18:18:21 - INFO - **** TC_02 Validate Create Objective Assessment ****
+2022-06-15 18:18:27 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 18:18:32 - INFO - RMK Nextgen - Add Assessment Page Verified 
