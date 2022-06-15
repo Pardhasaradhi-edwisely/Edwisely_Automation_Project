@@ -250,3 +250,125 @@
 2022-06-15 01:09:45 - INFO - ***Validate Assessment Page***
 2022-06-15 01:09:46 - INFO - ***Title Matched***
 2022-06-15 01:09:50 - INFO - *****Login Successful****
+2022-06-15 10:24:19 - INFO - ***Test_002_assessment***
+2022-06-15 10:24:19 - INFO - ***Validate Assessment Page***
+2022-06-15 10:24:24 - INFO - ***Title Matched***
+2022-06-15 10:24:27 - INFO - *****Login Successful****
+2022-06-15 10:24:28 - INFO - ***Assessment Title Matched***
+2022-06-15 10:27:15 - INFO - ***Test_002_assessment***
+2022-06-15 10:27:15 - INFO - ***Validate Assessment Page***
+2022-06-15 10:27:17 - INFO - ***Title Matched***
+2022-06-15 10:27:20 - INFO - *****Login Successful****
+2022-06-15 10:27:21 - INFO - ***Assessment Title Matched***
+2022-06-15 10:50:42 - INFO - ***Test_002_assessment***
+2022-06-15 10:50:42 - INFO - ***Validate Assessment Page***
+2022-06-15 10:50:46 - INFO - ***Page Title Matched***
+2022-06-15 10:50:50 - INFO - *****Login Successful****
+2022-06-15 10:50:50 - INFO - ***Assessment Title Matched***
+2022-06-15 11:12:39 - INFO - ***Test_002_assessment***
+2022-06-15 11:12:39 - INFO - ***Validate Assessment Page***
+2022-06-15 11:12:44 - INFO - ***Page Title Matched***
+2022-06-15 11:13:27 - INFO - ***Test_002_assessment***
+2022-06-15 11:13:27 - INFO - ***Validate Assessment Page***
+2022-06-15 11:13:29 - INFO - ***Page Title Matched***
+2022-06-15 11:16:03 - INFO - ***Test_002_assessment***
+2022-06-15 11:16:03 - INFO - ***Validate Assessment Page***
+2022-06-15 11:16:05 - INFO - ***Page Title Matched***
+2022-06-15 12:57:24 - INFO - ***Test_002_assessment***
+2022-06-15 12:57:24 - INFO - ***Validate Assessment Page***
+2022-06-15 12:57:28 - INFO - ***Page Title Matched***
+2022-06-15 12:57:32 - INFO - *****Login Successful****
+2022-06-15 12:57:32 - INFO - ***Assessment Title Matched***
+2022-06-15 13:06:45 - INFO - ***Test_002_assessment***
+2022-06-15 13:06:45 - INFO - ***Validate Assessment Page***
+2022-06-15 13:06:47 - INFO - RMK Nextgen | Login
+2022-06-15 13:06:51 - INFO - *****Login Successful****
+2022-06-15 13:06:51 - INFO - ***Assessment Title Matched***
+2022-06-15 13:07:51 - INFO - ***Test_002_assessment***
+2022-06-15 13:07:51 - INFO - ***Validate Assessment Page***
+2022-06-15 13:07:53 - INFO - RMK Nextgen | LoginPage Verified
+2022-06-15 13:07:57 - INFO - *****Login Successful****
+2022-06-15 13:07:57 - INFO - ***Assessment Title Matched***
+2022-06-15 13:08:14 - INFO - ***Test_002_assessment***
+2022-06-15 13:08:14 - INFO - ***Validate Assessment Page***
+2022-06-15 13:08:16 - INFO - RMK Nextgen | Login  Page Verified
+2022-06-15 13:08:20 - INFO - *****Login Successful****
+2022-06-15 13:08:20 - INFO - ***Assessment Title Matched***
+2022-06-15 13:10:06 - INFO - ***Test_002_assessment***
+2022-06-15 13:10:06 - INFO - ***Validate Assessment Page***
+2022-06-15 13:10:08 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 13:10:11 - INFO - *****Login Successful****
+2022-06-15 13:10:12 - INFO - ***Assessment Title Matched***
+2022-06-15 13:36:08 - INFO - ***Test_002_assessment***
+2022-06-15 13:36:08 - INFO - ***Validate Assessment Page***
+2022-06-15 13:36:12 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 13:36:16 - INFO - *****Login Successful****
+2022-06-15 13:36:16 - INFO - ***Assessment Title Matched***
+2022-06-15 13:43:47 - INFO - ***Test_002_assessment***
+2022-06-15 13:43:47 - INFO - ***Validate Assessment Page***
+2022-06-15 13:43:51 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 13:43:55 - INFO - *****Login Successful****
+2022-06-15 13:43:57 - INFO - ***Assessment Title Matched***
+2022-06-15 13:45:20 - INFO - ***Test_002_assessment***
+2022-06-15 13:45:20 - INFO - ***Validate Assessment Page***
+2022-06-15 13:45:22 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 13:45:22 - INFO - None
+2022-06-15 13:45:26 - INFO - *****Login Successful****
+2022-06-15 13:45:26 - INFO - ***Assessment Title Matched***
+2022-06-15 13:46:53 - INFO - ***Test_002_assessment***
+2022-06-15 13:46:53 - INFO - ***Validate Assessment Page***
+2022-06-15 13:46:55 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 13:46:55 - INFO - None
+2022-06-15 13:46:58 - INFO - *****Login Successful****
+2022-06-15 13:46:59 - INFO - ***Assessment Title Matched***
+2022-06-15 13:52:18 - INFO - ***Test_002_assessment***
+2022-06-15 13:52:18 - INFO - ***Validate Assessment Page***
+2022-06-15 13:52:20 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 13:52:23 - INFO - *****Login Successful****
+2022-06-15 13:52:24 - INFO - ***Assessment Title Matched***
+2022-06-15 14:09:35 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 14:10:48 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 14:13:16 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 14:13:16 - INFO - None
+2022-06-15 14:16:14 - INFO - RMK Nextgen | Login Page Verified
+2022-06-15 15:02:58 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:11:20 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:12:14 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:15:38 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:18:36 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:29:43 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:30:18 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:30:53 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:31:22 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:34:40 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:37:27 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:44:43 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:49:25 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:51:28 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 15:52:06 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 16:09:17 - INFO - ***Test_002_assessment***
+2022-06-15 16:09:17 - INFO - ***Validate Assessment Page***
+2022-06-15 16:09:21 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 16:09:25 - INFO - **** RMK Nextgen | Dashboard Page Verified ****
+2022-06-15 16:11:24 - INFO - ***Test_002_assessment***
+2022-06-15 16:11:24 - INFO - ***Validate Assessment Page***
+2022-06-15 16:11:26 - INFO - **** RMK Nextgen | Login Page Verified ****
+2022-06-15 16:11:30 - INFO - **** RMK Nextgen | Dashboard Page Verified ****
+2022-06-15 16:11:30 - INFO - **** RMK Nextgen | Assessment Page Verified ****
+2022-06-15 16:16:55 - INFO - ***Test_002_assessment***
+2022-06-15 16:16:55 - INFO - ***TC_01 Validate Assessment Page***
+2022-06-15 16:16:57 - INFO - RMK Nextgen | Login Page Verified 
+2022-06-15 16:17:00 - INFO - RMK Nextgen | Dashboard Page Verified 
+2022-06-15 16:17:01 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:18:05 - INFO - **** Test_002_assessment ****
+2022-06-15 16:18:05 - INFO - **** TC_01 Validate Assessment Page ****
+2022-06-15 16:18:07 - INFO - RMK Nextgen | Login Page Verified 
+2022-06-15 16:18:10 - INFO - RMK Nextgen | Dashboard Page Verified 
+2022-06-15 16:18:11 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:25:43 - INFO - **** Test_002_Assessment ****
+2022-06-15 16:25:43 - INFO - **** TC_02 Validate Create Objective Assessment ****
+2022-06-15 16:25:50 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:29:14 - INFO - **** Test_002_Assessment ****
+2022-06-15 16:29:14 - INFO - **** TC_02 Validate Create Objective Assessment ****
+2022-06-15 16:29:38 - INFO - RMK Nextgen | Assessment Page Verified 
+2022-06-15 16:29:42 - INFO - RMK Nextgen - Add Assessment Page Verified 
