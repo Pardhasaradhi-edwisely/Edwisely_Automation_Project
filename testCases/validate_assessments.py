@@ -95,10 +95,79 @@ class Test_002_assessment:
                 print(self.status)
                 self.log=LogGen.statusValidation(self,self.status,self.gettitle,self.driver)
                 self.logger.info(self.log)
-                self.quesTitle="AutoObj "+ReadConfig.random_generator()
+                self.quesTitle="AutoTitle "+ReadConfig.random_generator()
+                print("Test Name",self.quesTitle)
+                self.logger.info(self.quesTitle)
                 self.ap.addTitle(self.quesTitle)
                 self.ap.addDescription("Automation_test")
-                self.ap.d
+                self.sub=XLUtils.readData(self.path,'Sheet1',2,8)
+                self.ap.selectSubject(self.sub)
+                print(self.sub)
+                self.logger.info(self.sub)
+                self.ap.sectionName("A")
+                self.logger.info("Section-A")
+                self.ap.marksPerQuestion()
+                self.logger.info("Marks per question:2 Marks")
+                self.ap.secInstruction("Autoamation_test")
+                self.ap.addNewSection()
+                self.logger.info("New section added")
+                self.ap.sectionName02("B")
+                self.logger.info("Section B")
+                self.ap.secInstruction_02("Automation_test_02")
+                self.ap.deleteSection()
+                self.logger.info("Deleted above section")
+                time.sleep(2)
+                self.ap.clickContinue()
+                time.sleep(2)
+                self.title=self.driver.title
+                self.status=XLUtils.dataValidation(self.path,'Sheet1',self.title)
+                if self.status == True:
+                    assert True
+                    self.ap.clickAddQuestion()
+                    self.driver.implicitly_wait(10)
+                    for x in range(1,4):
+                        self.ap.addquestion("Question_01")
+                        self.ap.inputOption("opta", "optb", "optc", "optd")
+                        self.ap.selectOption()
+                        self.ap.addSource("test_Automation")
+                        self.ap.selectTopics()
+                        self.driver.implicitly_wait(10)
+                        self.ap.chooseTopics()
+                        self.ap.choosetopicClose()
+                        self.ap.selectBloom()
+                        self.ap.selectDifficulty(3)
+                        self.driver.implicitly_wait(10)
+                        self.ap.clickSaveToSection()
+                        self.w=self.driver.implicitly_wait(10)
+                        self.tx=self.driver.find_element(By.XPATH,"//div[@class='addingQues p-1']//div[@class='row'][x]").text()
+                        print(tx)
+                    self.ap.clickSaveAndSend()
+                    time.sleep(3)
+                    self.startTime=ReadConfig.getCustomStartDateAndTime(self)
+                    self.logger.info("start time is set at: ",self.startTime)
+                    self.ap.startTime(self.startTime)
+                    self.endTime=ReadConfig.getCustomStartDateAndTime(self)
+                    self.logger.info("End time is set at: ",self.endtime)
+                    self.ap.endTime(self.endTime)
+                    self.ap.setDuration()
+                    self.logger.info("Duration time is 2 mins")
+                    self.ap.classSelect()
+                    self.logger.info("selected section: 2 Section A")
+                    self.ap.selectStudents()
+                    self.logger.info("selected students are rmkcs5, rmkcs04, rmkcs04")
+                    self.ap.sendTest()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

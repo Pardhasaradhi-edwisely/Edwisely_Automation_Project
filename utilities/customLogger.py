@@ -10,7 +10,6 @@ class LogGen:
         logger.setLevel(logging.INFO)
         return logger
 
-
     def statusValidation(self,status,title,driver):
         if  status == "True":
             self.log= title +" Page Verified "
@@ -27,3 +26,4 @@ class LogGen:
             driver.save_screenshot(".//Screenshots//" + self.sc)
             assert False
             self.driver.close()
+

@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.select import Select
 
 class assessment:
     element_assessment_classname="//a[normalize-space()='Assessments']"
@@ -36,7 +37,7 @@ class assessment:
     textbox_minutes_classname="durationMinutes pl-1"
     toggle_nba_analysis_xpath="//input[@class='custom-control-input' and @id='nbaSwitch']"
     toggle_collect_feedback_xpath="//input[@class='custom-control-input' and @id='feedbackSwitch']"
-    radio_class_select_classname="sectionsListInput"
+    radio_class_select_xpath="//input[@class='sectionsListInput' and @data-department='CSE' and @data-id='708']"
     checkbox_rmkcs5_xpath="//input[@data-roll_number='RMKCS5']"
     checkbox_rmkcs04_xpath="//input[@data-roll_number='RMKCS04']"
     checkbox_rmkcs6_xpath="//input[@data-roll_number='RMKCS6']"
@@ -56,6 +57,7 @@ class assessment:
     textbox_source_id="sourceInput"
     button_save_section_id= "saveSection"
     button_add_question_id="addques"
+    button_topics_close_xpath="//div[@class='modal-dialog modal-lg']//button[@aria-label='Close']"
 
 
     def __init__(self,driver):
@@ -82,14 +84,14 @@ class assessment:
         self.driver.find_element(By.XPATH,self.textbox_description_box_xpath).send_keys(descrip)
 
     def selectSubject(self,sub):
-        subject=Select(self.driver.find_element(BY.XPATH,self.dropdown_subject_xpath))
-        subject.Select_by_visible_text(sub)
+        subject=Select(self.driver.find_element(By.XPATH,self.dropdown_subject_xpath))
+        subject.select_by_visible_text(sub)
 
     def sectionName(self,sec):
         self.driver.find_element(By.ID,self.textbox_section_name_id).clear()
         self.driver.find_element(By.ID, self.textbox_section_name_id).send_keys(sec)
 
-    def marksPerQuestion(self,marks):
+    def marksPerQuestion(self):
         mar=Select(self.driver.find_element(By.XPATH,self.dropdown_marks_per_question_xpath))
         mar.select_by_value('2.0')
 
@@ -98,15 +100,15 @@ class assessment:
         self.driver.find_element(By.XPATH,self.textbox_instruction_xpath).send_keys(instruction)
 
     def addNewSection(self):
-        self.driver.find_element(BY.ID,self.button_add_new_section_id).click()
+        self.driver.find_element(By.ID,self.button_add_new_section_id).click()
 
-    def sectionName_02(self,sec):
+    def sectionName02(self,sec):
         self.driver.find_element(By.ID,self.textbox_section_name_id2).clear()
         self.driver.find_element(By.ID, self.textbox_section_name_id2).send_keys(sec)
 
-    def marksPerQuestion_02(self,marks):
-        mar=Select(self.driver.find_element(By.XPATH,self.dropdown_marks_per_question_xpath2))
-        mar.select_by_value('2.0')
+    def marksPerQuestion02(self):
+        mar=Select(self.driver.find_element(By.XPATH,"//div[@id='section2']//select[@id='section_marks2']"))
+        mar.select_by_value('3.0')
 
     def secInstruction_02(self,instruction):
         self.driver.find_element(By.XPATH,self.textbox_instruction_xpath2).clear()
@@ -145,9 +147,9 @@ class assessment:
         blm=Select(self.driver.find_element(By.ID,self.dropdown_blooms_id))
         blm.select_by_visible_text(bloom)
 
-    def selectDifficulty(self,difficulty):
+    def selectDifficulty(self,diff):
         dif=Select(self.driver.find_element(By.ID,self.dropdown_difficult_id))
-        dif.select_by_visible_text(difficulty)
+        dif.select_by_value(diff)
 
     def addSource(self,source):
         self.driver.find_element(By.LINK_TEXT,self.link_add_source_id).click()
@@ -162,6 +164,35 @@ class assessment:
 
     def clickChooseQuestion(self):
         self.driver.find_element(By.ID,self.element_choose_question_id).click()
+
+    def chooseTopics(self):
+        self.topicsCount=self.driver.find_elements(By.XPATH,'//li//i[@class="fas fa-check"]')
+        for x in len(self.topicsCount):
+            self.driver.find_element(By.XPATH,'//li[x]//i[@class="fas fa-check"]').click()
+
+    def choosetopicClose(self):
+        self.driver.find_element(By.XPATH,self.button_topics_close_xpath).click()
+
+    def startTime(self,st):
+        self.driver.find_element(By.ID,self.textbox_start_time_id).send_keys(st)
+
+    def endTime(self,et):
+        self.driver.find_element(By.ID,self.textbox_end_time_id).send_keys(et)
+
+    def setDuration(self):
+        self.driver.find_elemement(By.CLASS_NAME,self.textbox_minutes_classname).send_keys('2')
+
+    def classSelect(self):
+        self.driver.find_element(By.XPATH,self.radio_class_select_xpath).click()
+
+    def selectStudents(self):
+        self.driver.find_element(By.XPATH,self.checkbox_rmkcs5_xpath).click()
+        self.driver.find_element(By.XPATH, self.checkbox_rmkcs04_xpath).click()
+        self.driver.find_element(By.XPATH, self.checkbox_rmkcs6_xpath).click()
+
+    def sendTest(self):
+        self.driver.find_element(By.xpath,self.button_send_id).click()
+
 
 
 
