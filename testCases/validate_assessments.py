@@ -76,8 +76,8 @@ class Test_002_assessment:
             self.dashboard_title = self.driver.title
             self.status = XLUtils.dataValidation(self.path, 'Sheet1', self.dashboard_title)
             if self.status == "True":
-                self.asses = assessment(self.driver)
-                self.asses.clickAssessment()
+                self.ap = assessment(self.driver)
+                self.ap.clickAssessment()
                 self.driver.implicitly_wait(10)
                 self.assesTitle = self.driver.title
                 print(self.assesTitle)
@@ -86,8 +86,8 @@ class Test_002_assessment:
                 self.log = LogGen.statusValidation(self, self.status, self.assesTitle, self.driver)
                 self.logger.info(self.log)
                 time.sleep(2)
-                self.asses.clickCreateNewAssessment()
-                self.asses.clickObjectiveAssessment()
+                self.ap.clickCreateNewAssessment()
+                self.ap.clickObjectiveAssessment()
                 time.sleep(2)
                 self.gettitle = self.driver.title
                 print(self.gettitle)
@@ -95,6 +95,12 @@ class Test_002_assessment:
                 print(self.status)
                 self.log=LogGen.statusValidation(self,self.status,self.gettitle,self.driver)
                 self.logger.info(self.log)
+                self.quesTitle="AutoObj "+ReadConfig.random_generator()
+                self.ap.addTitle(self.quesTitle)
+                self.ap.addDescription("Automation_test")
+                self.ap.d
+
+
 
 
 

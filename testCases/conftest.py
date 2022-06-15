@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 serv_obj=Service("E:\\Edwisely_Automation\\chromedriver_win32\\chromedriver.exe")
 options = webdriver.ChromeOptions()
-options.headless=True
+options.headless=False
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 import pytest
 
