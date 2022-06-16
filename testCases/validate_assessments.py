@@ -113,6 +113,8 @@ class Test_002_assessment:
                 self.logger.info("New section added")
                 self.ap.sectionName02("B")
                 self.logger.info("Section B")
+                self.ap.marksPerQuestion02()
+                self.logger.info("Marks per question: 4 Marks ")
                 self.ap.secInstruction_02("Automation_test_02")
                 self.ap.deleteSection()
                 self.logger.info("Deleted above section")

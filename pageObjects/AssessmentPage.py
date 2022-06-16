@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.select import Select
 
+
 class assessment:
     element_assessment_classname="//a[normalize-space()='Assessments']"
     label_your_assessment_id="courseName"
@@ -107,7 +108,8 @@ class assessment:
         self.driver.find_element(By.ID, self.textbox_section_name_id2).send_keys(sec)
 
     def marksPerQuestion02(self):
-        mar=Select(self.driver.find_element(By.XPATH,"//div[@id='section2']//select[@id='section_marks2']"))
+        self.driver.execute_script("arguments[0].scrollIntoView();",self.dropdown_marks_per_question_xpath2)
+        mar=Select(self.driver.find_element(By.XPATH,self.dropdown_marks_per_question_xpath2))
         mar.select_by_value('3.0')
 
     def secInstruction_02(self,instruction):
