@@ -2,7 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.select import Select
-
+import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class assessment:
     element_assessment_classname="//a[normalize-space()='Assessments']"
@@ -16,12 +18,12 @@ class assessment:
     textbox_section_name_id="section_name1"
     textbox_section_name_id2 = "section_name2"
     dropdown_marks_per_question_xpath="(//select[@id='section_marks1'])[1]"
-    dropdown_marks_per_question_xpath2="(//select[@id='section_marks2'])[1]"
+    dropdown_marks_per_question_xpath2="//div[@class='sections']//div[@class='section mt-4']//select[@id='section_marks2']"
     textbox_instruction_xpath="//div[@class='section']//div[@role='textbox']"
     textbox_instruction_xpath2="//div[@id='section2']//div[@role='textbox']"
     button_add_new_section_id="btnAdd"
     button_delete_above_section_id="btnDeleteSection"
-    button_continue_id="createAssessmentBtn"
+    button_continue_xpath="//button[@id='createAssessmentBtn']"
     label_create_assessment_xpath="//h5[normalize-space()='Create Questions']"
     element_choose_question_id="chooseques"
     dynamic_units_list_xpath="//li[@class='getUnitsLi'][1]//input[@class='getUnitsInput']"  #change no
@@ -30,7 +32,7 @@ class assessment:
     button_save_to_section_xpath="//button[normalize-space()='Save to Section']"
     dynamic_question_panel_xpath="//div[@class='addingQues p-1']//div[@class='row'][1]"  #change no
     button_save_and_exit_id="btnSaveExit"
-    button_save_and_send_id="btnSaveSend"
+    button_save_and_send_id="//button[@id='btnSaveSend']"
     textbox_start_time_id="starttime"
     textbox_end_time_id="endtime"
     toggle_auto_release_results_id="releaseSwitch"
@@ -47,14 +49,14 @@ class assessment:
     textbox_add_question_xpath = "//div[@class='col-sm-9']//div[@role='textbox']"
     input_add_image_id="quesImage"
     checkbox_topics_list_dynamic="//li[1]//input[@class='topicTagsInput']" #change no
-    dropdown_blooms_id="selectBloomLevel"
-    dropdown_difficulty_id="selectLevel"
+    dropdown_blooms_id="//select[@id='selectBloomLevel']"
+    dropdown_difficulty_id="//select[@id='selectLevel']"
     textbox_optionA_xpath="//div[@class='row pt-4']//div[@class='col-6 pl-0 pr-1']//div[@role='textbox']"
-    textbox_optionB_xpath="//div[@class='row no-gutters w-100']//div[@role='textbox']"
+    textbox_optionB_xpath="//div[@class='col-6 pr-1 pl-0']//div[@role='textbox']"
     textbox_optionC_xpath="//div[@class='row no-gutters w-100']//div[@role='textbox']"
     textbox_optionD_xpath="//div[@class='col-6 pl-1 pr-0']//div[@class='row no-gutters']//div[@role='textbox']"
-    checkbox_option_xpath="//input[@id='Radios1']"
-    link_add_source_id="sourceBtn"
+    checkbox_option_xpath="//i[@class='far fa-square fa-2x untick untick1']"
+    element_add_source_id="sourceBtn"
     textbox_source_id="sourceInput"
     button_save_section_id= "saveSection"
     button_add_question_id="addques"
@@ -108,9 +110,8 @@ class assessment:
         self.driver.find_element(By.ID, self.textbox_section_name_id2).send_keys(sec)
 
     def marksPerQuestion02(self):
-        self.driver.execute_script("arguments[0].scrollIntoView();",self.dropdown_marks_per_question_xpath2)
         mar=Select(self.driver.find_element(By.XPATH,self.dropdown_marks_per_question_xpath2))
-        mar.select_by_value('3.0')
+        mar.select_by_value('3')
 
     def secInstruction_02(self,instruction):
         self.driver.find_element(By.XPATH,self.textbox_instruction_xpath2).clear()
@@ -119,10 +120,25 @@ class assessment:
     def deleteSection(self):
         self.driver.find_element(By.ID,self.button_delete_above_section_id).click()
 
+    def scrollTillBodyTop(self):
+        self.driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
+
+    def wait(self,time):
+        self.driver.implicitly_wait(time)
+
+    def scrollElementViewByXpath(self,xpath):
+        self.element = self.driver.find_element(By.XPATH,xpath)
+        self.driver.execute_script("arguments[0].scrollIntoView();", self.element)
+
     def clickContinue(self):
-        self.driver.find_element(By.ID,self.button_continue_id).click()
+        self.driver.implicitly_wait(10)
+        self.driver.execute_script("window.scrollBy(0,-2000)")
+        self.driver.implicitly_wait(10)
+        self.driver.find_element(By.XPATH,self.button_continue_xpath).click()
 
     def clickAddQuestion(self):
+        time.sleep(1)
+        self.driver.implicitly_wait(10)
         self.driver.find_element(By.ID,self.button_add_question_id).click()
 
     def addquestion(self,ques):
@@ -130,12 +146,14 @@ class assessment:
         self.driver.find_element(By.XPATH, self.textbox_add_question_xpath).send_keys(ques)
 
     def selectTopics(self):
+        self.driver.execute_script("window.scrollBy(0,-1000)")
         self.driver.find_element(By.ID,self.element_topic_id).click()
 
     def inputOption(self,opta,optb,optc,optd):
         self.driver.find_element(By.XPATH,self.textbox_optionA_xpath).clear()
         self.driver.find_element(By.XPATH, self.textbox_optionA_xpath).send_keys(opta)
         self.driver.find_element(By.XPATH, self.textbox_optionB_xpath).clear()
+        self.wait(5)
         self.driver.find_element(By.XPATH, self.textbox_optionB_xpath).send_keys(optb)
         self.driver.find_element(By.XPATH, self.textbox_optionC_xpath).clear()
         self.driver.find_element(By.XPATH, self.textbox_optionC_xpath).send_keys(optc)
@@ -145,16 +163,19 @@ class assessment:
     def selectOption(self):
         self.driver.find_element(By.XPATH,self.checkbox_option_xpath).click()
 
-    def selectBloom(self,bloom):
-        blm=Select(self.driver.find_element(By.ID,self.dropdown_blooms_id))
-        blm.select_by_visible_text(bloom)
+    def selectBloom(self):
+        time.sleep(2)
+        self.driver.implicitly_wait(10)
+        blm=Select(self.driver.find_element(By.XPATH,self.dropdown_blooms_id))
+        blm.select_by_value('3')
 
-    def selectDifficulty(self,diff):
-        dif=Select(self.driver.find_element(By.ID,self.dropdown_difficult_id))
-        dif.select_by_value(diff)
+    def selectDifficulty(self):
+        self.driver.implicitly_wait(10)
+        dif=Select(self.driver.find_element(By.XPATH,self.dropdown_difficulty_id))
+        dif.select_by_value('2')
 
     def addSource(self,source):
-        self.driver.find_element(By.LINK_TEXT,self.link_add_source_id).click()
+        self.driver.find_element(By.ID,self.element_add_source_id).click()
         self.driver.find_element(By.ID,self.textbox_source_id).clear()
         self.driver.find_element(By.ID,self.textbox_source_id).send_keys(source)
 
@@ -162,17 +183,28 @@ class assessment:
         self.driver.find_element(By.XPATH,self.button_save_to_section_xpath).click()
 
     def clickSaveAndSend(self):
-        self.driver.find_element(By.ID,self.button_save_and_send_id).click()
+        time.sleep(1)
+        self.driver.execute_script("window.scrollBy(0,-3000)")
+        time.sleep(1)
+        WebDriverWait(self.driver, 20).until(EC.invisibility_of_element_located((By.XPATH,self.button_save_and_send_id)))
+        WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable((By.XPATH,self.button_save_and_send_id))).click()
+        #self.driver.implicitly_wait(10)
+        #self.driver.find_element(By.XPATH,self.button_save_and_send_id).click()
 
     def clickChooseQuestion(self):
         self.driver.find_element(By.ID,self.element_choose_question_id).click()
 
     def chooseTopics(self):
-        self.topicsCount=self.driver.find_elements(By.XPATH,'//li//i[@class="fas fa-check"]')
-        for x in len(self.topicsCount):
-            self.driver.find_element(By.XPATH,'//li[x]//i[@class="fas fa-check"]').click()
+        self.driver.implicitly_wait(10)
+        self.topicsCount=self.driver.find_elements(By.XPATH,'//label[@class="topicTagsLabel show1"]')
+        print(len(self.topicsCount))
+        for x in range(len(self.topicsCount)):
+            print(x)
+            self.topicsCount[x].click()
+
 
     def choosetopicClose(self):
+        self.driver.implicitly_wait(10)
         self.driver.find_element(By.XPATH,self.button_topics_close_xpath).click()
 
     def startTime(self,st):

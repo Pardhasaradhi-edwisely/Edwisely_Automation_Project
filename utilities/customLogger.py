@@ -12,11 +12,23 @@ class LogGen:
 
     def statusValidation(self,status,title,driver):
         if  status == "True":
-            self.log= title +" Page Verified "
+            self.log= title +" Page Title Verified "
             return self.log
             assert True
+
+        elif status == "False":
+            self.log = title + " -> Page Title Returned None"
+            return self.log
+            self.sc = "".join(title.split())
+            self.sc = self.sc.strip()
+            self.sc = "".join(filter(str.isalnum, self.sc))
+            self.sc = self.sc + ".png"
+            print("screeshot img", self.sc)
+            driver.save_screenshot(".//Screenshots//" + self.sc)
+            assert False
+            self.driver.close()
         else:
-            self.log= title + " Page Verification Fail "
+            self.log= title + " Title Page Verification Fail "
             return self.log
             self.sc = "".join(title.split())
             self.sc = self.sc.strip()

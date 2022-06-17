@@ -4,6 +4,7 @@ import string
 from datetime import datetime
 from datetime import timedelta
 
+
 config = configparser.RawConfigParser()
 config.read(".//Configurations//config.ini")
 
@@ -37,6 +38,8 @@ class ReadConfig():
         self.now+=timedelta(minutes=6)
         self.endTime=self.now.strftime("%d %b %Y %H:%M:%S")   #07 Jan 2021 00:35:20
         return self.endTime
+
+
 
 
 
