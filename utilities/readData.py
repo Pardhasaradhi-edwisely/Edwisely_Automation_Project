@@ -26,18 +26,19 @@ class ReadConfig():
     @staticmethod
     def random_generator(size=8,chars=string.ascii_lowercase+string.digits):
         return''.join(random.choice(chars) for x in range(size))
+    @staticmethod
+    def getCustomStartDateAndTime():
+        now=datetime.now()
+        now+=timedelta(minutes=2)
+        startTime=now.strftime("%d %b %Y %H:%M:%S")   #07 Jan 2021 00:35:20
+        return startTime
 
-    def getCustomStartDateAndTime(self):
-        self.now=datetime.now()
-        self.now+=timedelta(minutes=2)
-        self.startTime=self.now.strftime("%d %b %Y %H:%M:%S")   #07 Jan 2021 00:35:20
-        return self.startTime
-
-    def getCustomEndDateAndTime(self):
-        self.now=datetime.now()
-        self.now+=timedelta(minutes=6)
-        self.endTime=self.now.strftime("%d %b %Y %H:%M:%S")   #07 Jan 2021 00:35:20
-        return self.endTime
+    @staticmethod
+    def getCustomEndDateAndTime():
+        now=datetime.now()
+        now+=timedelta(minutes=6)
+        endTime=now.strftime("%d %b %Y %H:%M:%S")   #07 Jan 2021 00:35:20
+        return endTime
 
 
 

@@ -18,7 +18,6 @@ def pytest_configure(config):
     config.metadata['Module Name'] = 'login'
     config.metadata['QA'] = 'Pardha'
 
-
 @pytest.mark.optionalhook
 def pytest_metadata(metadata):
     metadata.pop("JAVA HOME",None)
