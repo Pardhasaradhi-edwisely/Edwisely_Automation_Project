@@ -2,9 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 serv_obj=Service("E:\\Edwisely_Automation\\chromedriver_win32\\chromedriver.exe")
 options = webdriver.ChromeOptions()
-options.headless=True
+options.headless=False
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 import pytest
+from selenium.webdriver.common.action_chains import ActionChains
 
 @pytest.fixture()
 def setup():
@@ -16,7 +17,6 @@ def pytest_configure(config):
     config.metadata['project Name'] = 'Edwisely_Automation_Project'
     config.metadata['Module Name'] = 'login'
     config.metadata['QA'] = 'Pardha'
-
 
 @pytest.mark.optionalhook
 def pytest_metadata(metadata):
@@ -56,3 +56,4 @@ def pytest_generate_tests(metafunc):
     # generate tests
     if 'test_system' in metafunc.fixturenames:
         metafunc.parametrize('test_system', [s])
+

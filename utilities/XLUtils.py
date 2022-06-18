@@ -19,7 +19,14 @@ def dataValidation(file,sheetName,checkCell):
             exp = readData(file,sheetName, r, c)
             if checkCell == exp:
                 status = "True"
-                return status
+    if status == "True":
+        return status
+    elif status == None:
+        status="False"
+        return status
+    else:
+        status ="False"
+        return status
 
 def readData(file,sheetName,rownum,columnno):
     workbook = openpyxl.load_workbook(file)
